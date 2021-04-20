@@ -1,0 +1,10 @@
+ Volume in drive C is Local Disk
+ Volume Serial Number is C034-A84E
+
+ Directory of C:\Users\dapos\MyProjects
+
+04/20/2021  03:09 PM    <DIR>          .
+04/20/2021  03:09 PM    <DIR>          ..
+04/20/2021  03:09 PM                 0 test1.txt
+               1 File(s)              0 bytes
+               2 Dir(s)  93,398,196,224 bytes free
