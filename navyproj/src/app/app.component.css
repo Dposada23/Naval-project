@@ -1,0 +1,13 @@
+.container {
+  background-image: url("../assets/T-45A_Goshawk_03.jpg");
+  width: 100vw;
+  height: 100vh;
+  /* display: flex; */
+  flex-direction: row;
+
+  background-color: black;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
