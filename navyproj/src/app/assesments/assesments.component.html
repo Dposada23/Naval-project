@@ -1,1 +1,25 @@
-<p>assesments works!</p>
+<div class="card">
+  <div class="card-body">
+    <div class = " col-md-12">
+      <h5 class="card-title">Flight Risk Assesment</h5>
+      <div *ngIf = "currentQuiz < 10">
+        <p class = "text-center"> {{currentQuiz +1 }} of {{quizzes.length}}</p>
+        <h1>{{ quizzes[randomize].question }} </h1>
+          <ul class= "list-group" *ngFor ="let quiz of quizzes[randomize].answer">
+          <label>
+            <li class="list-group-item">
+            <input type = "radio" name ="options" (change) = "onAnswer(quiz.correct)" [disabled] = "answerSelected">
+            {{quiz.option}}</li>
+          </label>
+          </ul>
+        </div>
+        <div *ngIf= "currentQuiz > 9">
+          <button class = "btn btn-success btn-block" (click)="showResult()"> Show Result</button>
+          <div class ="text-center" *ngIf= "result">
+            Score:
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
