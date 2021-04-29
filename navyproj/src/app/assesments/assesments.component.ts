@@ -13,17 +13,17 @@ export class AssesmentsComponent implements OnInit {
   correctAnswers = 0;
   incorrectAnswers = 0;
 
-  randomize: number;
+  //randomize: number;
   result = false;
     constructor(private quizService: AssesmentsService) { }
 
     ngOnInit(): void {
       this.quizzes = this.quizService.getQuizzes();
-      this.randomize = Math.floor(Math.random() * this.quizzes.length);
+     // this.randomize = Math.floor(Math.random() * this.quizzes.length);
     }
     onAnswer(option: boolean){
       setTimeout(() => {
-      this.randomize=Math.floor(Math.random() * this.quizzes.length)
+      //this.randomize=Math.floor(Math.random() * this.quizzes.length)
       this.currentQuiz++;
       this.answerSelected = false;
       }, 1000)
