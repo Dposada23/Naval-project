@@ -12,6 +12,8 @@ export class AssesmentsComponent implements OnInit {
   answerSelected = false;
   correctAnswers = 0;
   incorrectAnswers = 0;
+ 
+
 
   randomize: number;
   result = false;

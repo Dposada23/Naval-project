@@ -8,7 +8,7 @@
           <ul class= "list-group" *ngFor ="let quiz of quizzes[randomize].answer">
           <label>
             <li class="list-group-item">
-            <input type = "radio" name ="options" (change) = "onAnswer(quiz.correct)" [disabled] = "answerSelected">
+            <input type = "radio" name ="options" (change) ="onAnswer(quiz.correct)" [disabled] = "answerSelected">
             {{quiz.option}}</li>
           </label>
           </ul>
@@ -16,7 +16,22 @@
         <div *ngIf= "currentQuiz > 9">
           <button class = "btn btn-success btn-block" (click)="showResult()"> Show Result</button>
           <div class ="text-center" *ngIf= "result">
-            Score:
+            Correct Answers: {{correctAnswers}} | Incorrect Answers: {{incorrectAnswers}} <br>
+            <h3>Score:{{correctAnswers / quizzes.length *100}}</h3>
+            <div *ngIf ="correctAnswers > 7">
+              <div class="timer-btn-circle-container">
+                <button id="bigbtn" type="button" class="btn btn-success btn-circle-pass" >
+                  <h1>PASS</h1>
+                </button>
+              </div>
+            </div>
+            <div *ngIf ="correctAnswers < 7">
+              <div class="timer-btn-circle-container">
+                <button id="bigbtn" type="button" class="btn btn-danger btn-circle-fail" >
+                  <h1>Hazard</h1>
+                </button>
+              </div>
+          </div>
           </div>
         </div>
     </div>
