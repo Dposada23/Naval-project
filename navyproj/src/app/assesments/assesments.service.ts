@@ -26,8 +26,8 @@ quizzes: Quiz[] = [
     {
       question: 'Are you taking any prescription or over-the-counter drugs?',
       answer:[
-      {option: 'Yes', correct: true },
-      {option: 'No', correct: false },
+      {option: 'Yes', correct: false },
+      {option: 'No', correct: true },
         ]
       },
       {

@@ -20,12 +20,14 @@
             <div class ="text-center" *ngIf= "result">
               Correct Answers: {{correctAnswers}} | Incorrect Answers: {{incorrectAnswers}} <br>
               <h3>Score:{{correctAnswers / quizzes.length *100}}</h3>
-              <div *ngIf ="correctAnswers > 7">
+              <div *ngIf ="correctAnswers >= 7">
                 <div class="timer-btn-circle-container">
                   <button id="bigbtn" type="button" class="btn btn-success btn-circle-pass" >
                     <h1>PASS</h1>
                   </button>
                 </div>
+                <div class="row mb-5"></div>
+                <a  routerLink="/home"><button type="button" class="btn btn-primary btn-rounded" size ="lg" mdbWavesEffect>Retake Assesment</button></a>
               </div>
               <div *ngIf ="correctAnswers < 7">
                 <div class="timer-btn-circle-container">
