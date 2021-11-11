@@ -1,26 +1,27 @@
 <div class = "container">
   <div class="row mb-5"></div>
-  <div class="card">
+  <div class="card" id ="card">
     <div class="card-body">
       <div class = " col-md-12">
         <h5 class="card-title">Flight Risk Assesment</h5>
         <div *ngIf = "currentQuiz < 10">
           <p class = "text-center"> {{currentQuiz +1 }} of {{quizzes.length}}</p>
-          <h1>{{ quizzes[currentQuiz].question }} </h1>
+          <h2>{{ quizzes[currentQuiz].question }} </h2>
             <ul class= "list-group" *ngFor ="let quiz of quizzes[currentQuiz].answer">
             <label>
               <li class="list-group-item">
-              <input type = "radio" name ="options" (change) ="onAnswer(quiz.correct)" [disabled] = "answerSelected">
+              <input id = "radio" type = "radio" name ="options" (change) ="onAnswer(quiz.correct)" [disabled] = "answerSelected" >
               {{quiz.option}}</li>
             </label>
             </ul>
           </div>
+
           <div *ngIf= "currentQuiz > 9">
             <button class = "btn btn-success btn-block" (click)="showResult()"> Show Result</button>
             <div class ="text-center" *ngIf= "result">
               Correct Answers: {{correctAnswers}} | Incorrect Answers: {{incorrectAnswers}} <br>
               <h3>Score:{{correctAnswers / quizzes.length *100}}</h3>
-              <div *ngIf ="correctAnswers >= 7">
+              <div *ngIf ="correctAnswers > 7">
                 <div class="timer-btn-circle-container">
                   <button id="bigbtn" type="button" class="btn btn-success btn-circle-pass" >
                     <h1>PASS</h1>
@@ -29,7 +30,7 @@
                 <div class="row mb-5"></div>
                 <a  routerLink="/home"><button type="button" class="btn btn-primary btn-rounded" size ="lg" mdbWavesEffect>Retake Assesment</button></a>
               </div>
-              <div *ngIf ="correctAnswers < 7">
+              <div *ngIf ="correctAnswers < 8">
                 <div class="timer-btn-circle-container">
                   <button id="bigbtn" type="button" class="btn btn-danger btn-circle-fail" >
                     <h1>Hazard</h1>
