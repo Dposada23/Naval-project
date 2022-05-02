@@ -6,7 +6,7 @@
         <h5 class="card-title">Flight Risk Assesment</h5>
         <div *ngIf = "currentQuiz < 10">
           <p class = "text-center"> {{currentQuiz +1 }} of {{quizzes.length}}</p>
-          <h2>{{ quizzes[currentQuiz].question }} </h2>
+          <h4>{{ quizzes[currentQuiz].question }} </h4>
             <ul class= "list-group" *ngFor ="let quiz of quizzes[currentQuiz].answer">
             <label>
               <li class="list-group-item">
@@ -24,7 +24,7 @@
               <div *ngIf ="correctAnswers > 7">
                 <div class="timer-btn-circle-container">
                   <button id="bigbtn" type="button" class="btn btn-success btn-circle-pass" >
-                    <h1>PASS</h1>
+                    <h1>Low</h1>
                   </button>
                 </div>
                 <div class="row mb-5"></div>
@@ -33,7 +33,8 @@
               <div *ngIf ="correctAnswers < 8">
                 <div class="timer-btn-circle-container">
                   <button id="bigbtn" type="button" class="btn btn-danger btn-circle-fail" >
-                    <h1>Hazard</h1>
+                    risk level:
+                    <h1>High</h1>
                   </button>
                 </div>
                 <div class="row mb-5"></div>
